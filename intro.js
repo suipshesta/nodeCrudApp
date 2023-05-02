@@ -1,7 +1,7 @@
 //https://roadmap.sh/nodejs
 
 // import library/packages/modules
-const person=require("./person");
+ const person=require("./person");
 
 
 // instanciate the class
