@@ -1,4 +1,3 @@
-//https://roadmap.sh/nodejs
 
 // import library/packages/modules
  const person=require("./person");
@@ -12,3 +11,14 @@
  intro1.greetings();
 
 
+
+
+// let bb={
+//     "a":"bla bla bla",
+//     "c":()=>{
+//         let y=1;
+//         let z=2;
+//         return y+z;
+//     }
+// }
+// console.log(bb.c());

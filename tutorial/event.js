@@ -7,10 +7,10 @@ class MyEmitter extends EventEmitter{}
 const myemitter=new MyEmitter;
 
 //event listener
-myemitter.on('event',()=>console.log("event fire"));
+myemitter.on('event',(d)=>console.log(d));
 
-//init event
-myemitter.emit('event');
+//create/init event
+myemitter.emit('event',"haha");
 
 
 

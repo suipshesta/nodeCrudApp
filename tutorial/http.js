@@ -1,12 +1,7 @@
-const http=require('http');
-
-
-
-const myhttp=http.createServer((req,res)=>{
-   res.write("hello, k cha?");
-   res.end();
+const http = require('http');
+const myhttp = http.createServer((req, res) => { 
+    res.write("thk cha"); 
+    res.end(); 
 });
-
-myhttp.listen(5000,()=>{
-    console.log("server is running on 5000");
-})
+const PORT = process.env.PORT || 5000;
+myhttp.listen(PORT, () => { console.log(`server is running on ${PORT}`); });
