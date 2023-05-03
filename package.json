@@ -4,7 +4,7 @@
   "description": "we are learning",
   "main": "index.js",
   "scripts": {
-    "start": "node ./tutorial/http"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "MIT",
