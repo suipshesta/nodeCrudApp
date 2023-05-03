@@ -26,8 +26,8 @@ async function listDatabase(client) {
     });
 }
 async function getData(client,dbname){
-    let jd=await client.db(dbname).collection('Users');
-     let data=await jd.find({}).toArray();
+    let collection=await client.db(dbname).collection('Users');
+     let data=await collection.find({}).toArray();
     console.log("collection from Users are:");
     console.log(data);
 
