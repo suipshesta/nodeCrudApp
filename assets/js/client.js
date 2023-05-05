@@ -3,7 +3,7 @@ const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
 const messageContainer = document.querySelector('.container');
 
-const name = prompt("enter you name to join");
+var name = prompt("enter you name to join");
 
 const append=(message)=>{
     const messageElement=document.createElement('div');
@@ -15,9 +15,14 @@ const append=(message)=>{
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    const message=messageInput.value;
-    append(`you: ${message}`);
-    socket.emit('send',message);
+    let msg = { 
+        'message':messageInput.value,
+        'user':name 
+    }
+    
+    append(`you: ${msg.message}`);
+    socket.emit('send',msg);
+    messageInput.value='';
 });
 
 
@@ -26,5 +31,6 @@ socket.emit('newUserJoin', name => {
 });
 
 socket.on('receive',data=>{
-append(`${data.message} : ${data.user}`);
+    console.log(data);
+append(`${data.user} : ${data.message}`);
 });
