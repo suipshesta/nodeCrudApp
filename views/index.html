@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+     <!-- <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
         integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>  -->
+        <script src="/socket.io/socket.io.js"> </script>
     <script defer type="text/javascript" src="/js/client.js"></script>
     <style>
         .container {
@@ -26,7 +27,7 @@
        
     </div>
     <div class="send">
-        <form action="#">
+        <form action="#" id="send-container">
             <input type="text" id="messageInp" />
             <button type="submit" class="btn"> Send</button>
         </form>
