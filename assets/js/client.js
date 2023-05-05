@@ -14,15 +14,24 @@ const append=(message)=>{
 }
 
 form.addEventListener('submit',(e)=>{
+    if(messageInput.value=='')
+    return false;
     e.preventDefault();
     let msg = { 
         'message':messageInput.value,
         'user':name 
     }
-    
     append(`you: ${msg.message}`);
     socket.emit('send',msg);
     messageInput.value='';
+    document.querySelector('.container').scrollTo(0,document.querySelector('.container').scrollHeight);
+   
+});
+messageInput.addEventListener('keyup',e=>{
+    if(e.key=='Enter'){
+        document.getElementById('sendbtn').click();
+        
+    }
 });
 
 
@@ -33,4 +42,5 @@ socket.emit('newUserJoin', name => {
 socket.on('receive',data=>{
     console.log(data);
 append(`${data.user} : ${data.message}`);
+document.querySelector('.container').scrollTo(0,document.querySelector('.container').scrollHeight);
 });

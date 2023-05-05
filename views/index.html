@@ -14,10 +14,14 @@
     <script defer type="text/javascript" src="/js/client.js"></script>
     <style>
         .container {
-            height: 300px;
             width: 300px;
             border-color: black;
             border-style: solid;
+            overflow-y: auto;
+            height: 300px;
+        }
+        .message{
+            padding: 2px;
         }
     </style>
 </head>
@@ -28,8 +32,13 @@
     </div>
     <div class="send">
         <form action="#" id="send-container">
-            <input type="text" id="messageInp" />
-            <button type="submit" class="btn"> Send</button>
+            <div>
+                <textarea name="" id="messageInp" cols="40" rows="2" aria-placeholder="Type text here"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn" id="sendbtn"> Send</button>
+            </div>
+           
         </form>
     </div>
 </body>
