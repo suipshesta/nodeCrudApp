@@ -35,12 +35,12 @@ messageInput.addEventListener('keyup',e=>{
 });
 
 
-socket.emit('newUserJoin', name => {
-    append(`${name} joined the chat`);
-});
+// socket.emit('newUserJoin', name => {
+//     append(`${name} joined the chat`);
+// });
 
 socket.on('receive',data=>{
     console.log(data);
-append(`${data.user} : ${data.message}`);
-document.querySelector('.container').scrollTo(0,document.querySelector('.container').scrollHeight);
+    append(`${data.user} : ${data.message}`);
+    document.querySelector('.container').scrollTo(0,document.querySelector('.container').scrollHeight);
 });
